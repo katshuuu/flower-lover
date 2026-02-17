@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FloraAI - Создайте уникальный букет с ИИ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #app {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- Шапка чата -->
+        <div class="chat-header">
+            <div class="header-left">
+                <div class="ai-avatar">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <div class="header-info">
+                    <h1>FloraAI: Ваш персональный флорист с ИИ</h1>
+                    <p>Создам уникальный букет специально для вас</p>
+                </div>
+            </div>
+            <button class="close-btn" id="closeBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <!-- Прогресс создания -->
+        <div class="creation-progress" id="creationProgress">
+            <div class="progress-header">
+                <div class="progress-title">Создание вашего уникального букета</div>
+                <div class="progress-step" id="progressStep">Вопрос 1 из 6</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <!-- Основной контейнер чата -->
+        <div class="chat-container">
+            <!-- Область сообщений -->
+            <div class="chat-messages" id="chatMessages">
+                <!-- Первое сообщение от ИИ -->
+                <div class="message ai-message" id="initialMessage">
+                    <div class="message-header">
+                        <i class="fas fa-spa"></i>
+                        <span>FloraAI</span>
+                    </div>
+                    <p>Здравствуйте! 🌷 
+                        <br> Я ваш персональный флорист с искусственным интеллектом. Помогу создать уникальную цветочную композицию, которая идеально передаст ваши чувства.</p>
+                    <p>Я задам вам несколько вопросов, чтобы понять ваши предпочтения, а затем создам индивидуальный букет специально для вашего случая!</p>
+                </div>
+            </div>
+
+            <!-- Футер с информацией -->
+            <div class="chat-footer">
+                <i class="fas fa-lock"></i> Ваши данные защищены и используются только для создания букета
+            </div>
+        </div>
+
+        <!-- Поле ввода (скрыто по умолчанию) -->
+        <div class="chat-input-container" id="chatInputContainer">
+            <div class="input-wrapper">
+                <textarea 
+                    class="chat-input" 
+                    id="userInput" 
+                    placeholder="Введите ваш ответ здесь..." 
+                    rows="2"></textarea>
+                <button class="send-button" id="sendButton">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>
